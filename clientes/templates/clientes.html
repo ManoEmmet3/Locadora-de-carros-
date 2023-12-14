@@ -40,24 +40,25 @@
                     <div class="add-carros">
                         <h3>Carros</h3>
                         <span class="btn-add-carros" onclick="add_carro()">+ Adicionar um carro</span>
+                        
                         <div id="form-carro">
-                            {% for carro, placa, ano in carros%}
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md">
-                                            <input type='text' placeholder='carro' class='form-control' name='carro' value="{{carro}}">
-                                        </div>
+                           {%for carro, placa, ano in carros%}   
+                               <br>
+                               <div class=row"" >
+                                <div class="col-md"  >
+                                    <input type='text' placeholder='carro' class='form-control' name='carro' value="{{carro}}" >
+                                </div>
 
-                                        <div class="col-md">
-                                            <input type='text' placeholder='Placa' class='form-control' name='placa' value="{{placa}}">
-                                        </div>
+                                <div class="col-md"  >
+                                    <input type='text' placeholder='placa' class='form-control' name='placa' value="{{placa}}" >
+                                </div>
 
-                                        <div class="col-md">
-                                            <input type='number' placeholder='ano' class='form-control' name='ano' value="{{ano}}">
-                                        </div>
+                                <div class="col-md"  >
+                                    <input type='number' placeholder='ano' class='form-control' name='ano'. value="ano" > 
+                                </div>
 
-                                    </div>
-                            {% endfor%}
+                               </div>
+                           {%endfor%}
                         </div>
 
                     </div>
@@ -68,41 +69,7 @@
                 </form>
         
             </div>
-
-
-            <div id="att_cliente">
-                <p></p>
-                <select id="cliente-select"  onchange="dados_cliente()" class="form-control">
-                    <option value=""></option>
-                    {% for cliente in clientes %}
-                    <option value="{{cliente.id}}">{{cliente.nome}} {{cliente.sobrenome}}</option>
-                    {% endfor %}
-                </select>
-                <br>
-                <hr>
-
-                <div id="form-att-cliente">
-                    <input type="hidden" id="id">
-                    <p>Nome:</p>
-                    <input id="nome" type="text" class='form-control'>
-                    <p>Sobrenome:</p>
-                    <input id="sobrenome" type="text" class='form-control'>
-                    <p>E-mail:</p>
-                    <input id="email" type="text" class='form-control'>
-                    <p>CPF:</p>
-                    <input id="cpf" type="text" class='form-control'>
-                    <br>
-                    <input onclick="update_cliente()"  type="submit" value="Salvar" class="btn btn-success" > 
-                    <hr style="background-color: gray;">
-                    <h2>Carros</h2>
-                  
-
-                    <div id="carros">
-                        
-                    </div>
-                </div>
-                
-            </div>
+        </div>
 
     </div>
     <script src="{% static 'clientes/js/clientes.js' %}"></script>
