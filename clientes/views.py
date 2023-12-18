@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
 from.models import Cliente, Carro
 import re
@@ -80,9 +80,6 @@ def excluir_carro(request, id):
     except:
         return redirect(reverse('clientes')+f'?aba=att_cliente&id_cliente={id}')
     
-
-
-
 def update_cliente(request, id):
     body = json.loads(request.body)
 
@@ -100,4 +97,4 @@ def update_cliente(request, id):
         cliente.save()
         return JsonResponse({'status': '200', 'nome': nome, 'sobrenome': sobrenome, 'email': email, 'cpf': cpf})
     except:
-        return JsonResponse({'status': '500'})    
+        return JsonResponse({'status': '500'})
