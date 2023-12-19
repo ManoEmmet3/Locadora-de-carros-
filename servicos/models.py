@@ -41,4 +41,6 @@ class Servico(models.Model):
             preco_total += float(categoria.preco)
 
         return preco_total
+
+        # nao deu para terminar tudo 
     
